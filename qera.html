@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QERA</title>
+    <style>
+        /* General Layout */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: black;
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 20vw;
+            background-color: #242424;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 50px;
+            border-right: 2.5px solid whitesmoke;
+            border-top: 5px solid whitesmoke;
+            border-bottom: 5px solid whitesmoke;
+            border-left: 5px solid whitesmoke;
+            border-radius: 20px;
+            justify-content: center;
+        }
+
+        .sarpanch-semibold {
+            font-family: "Sarpanch", sans-serif;
+            font-weight: 600;
+            font-style: normal;
+        }
+
+        .box {
+            margin: 25px;
+        }
+
+        button {
+            font-size: 1.4em;
+            padding: 0.6em 0.8em;
+            border-radius: 0.5em;
+            border: none;
+            background-color: #000;
+            color: #fff;
+            cursor: pointer;
+            box-shadow: 2px 2px 3px #000000b4;
+            width: 10vw;
+        }
+
+        /* Style for Anchor Tags (Buttons as Links) */
+        .container_nav a {
+            display: block;
+            font-size: 1.4em;
+            padding: 0.6em 0.8em;
+            text-align: center;
+            border-radius: 0.5em;
+            background-color: #000;
+            color: #fff;
+            text-decoration: none;
+            cursor: pointer;
+            box-shadow: 2px 2px 3px #000000b4;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Hover Effect for Links */
+        /* .container_nav a:hover {
+            /* background-color: #020202; 
+            
+        } */
+
+        .container_nav {
+            width: 10vw;
+            position: relative;
+            padding: 3px;
+            background: linear-gradient(90deg, #ff5f00, #ec3499);
+            border-radius: 0.9em;
+            transition: all 0.4s ease;
+            margin: 15px;
+
+        }
+
+
+        .container_nav::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            margin: auto;
+            border-radius: 0.9em;
+            z-index: -10;
+            filter: blur(10);
+            transition: filter 0.4s ease;
+
+        }
+
+        .container_nav:hover::before {
+            background: linear-gradient(90deg, #ff5f00, #ec3499);
+            filter: blur(1.2em);
+        }
+
+        .container_nav:active::before {
+            filter: blur(0.2em);
+        }
+
+        /* Main Content */
+        .main-content {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background-color: black;
+            background: url('background.jpg');
+            background-repeat: no-repeat;
+            background-size: 80vw;
+            /* border: 5px solid whitesmoke; */
+            border-radius: 20px;
+            border-left: 2.5px solid whitesmoke;
+            border-top: 5px solid whitesmoke;
+            border-bottom: 5px solid whitesmoke;
+            border-right: 5px solid whitesmoke;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 20vw;
+            background-color: #242424;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 50px;
+            border-right: 2.5px solid whitesmoke;
+            border-top: 5px solid whitesmoke;
+            border-bottom: 5px solid whitesmoke;
+            border-left: 5px solid whitesmoke;
+            border-radius: 20px;
+            justify-content: center;
+            position: fixed;
+            /* Make the sidebar fixed */
+            height: 100vh;
+            /* Full height of the viewport */
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-top: auto;
+            width: 80vw;
+            margin-left: 20vw;
+            /* Offset the content by the sidebar width */
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            background-color: black;
+            background: url('background.jpg');
+            background-repeat: no-repeat;
+            background-size: 80vw;
+            border-left: 2.5px solid whitesmoke;
+            border-top: 5px solid whitesmoke;
+            border-bottom: 5px solid whitesmoke;
+            border-right: 5px solid whitesmoke;
+            overflow-y: auto;
+            /* Enable scrolling */
+            height: 100vh;
+            /* Full height of the viewport */
+        }
+
+        /* Hide Scrollbar */
+        .main-content::-webkit-scrollbar {
+            width: 0;
+            /* Remove scrollbar space */
+            height: 0;
+        }
+
+        .main-content {
+            scrollbar-width: none;
+            /* For Firefox */
+            -ms-overflow-style: none;
+            /* For Internet Explorer and Edge */
+        }
+
+        .chat-container {
+            width: 50vw;
+            height: 80vh;
+            background-color: #76A9EA;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+            margin: 40px;
+            border: 7px solid rgb(202, 202, 202);
+            /* border: 7px solid #8f8f8f; 
+            border-radius: 22px; */
+        }
+
+        .b_frame{
+            height: 80vh;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+
+            <div class="box">
+                <div class="container_nav">
+                    <!-- Link to Home -->
+                    <a href="qera.html" class="button">QERA</a>
+                </div>
+                <div class="container_nav">
+                    <!-- Link to About -->
+                    <a href="about.html" class="button">About</a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="chat-container">
+                <!-- i frame -->
+                <!-- <iframe height="430" width="350" src="https://bot.dialogflow.com/cb18da56-0d47-4d5a-b6ed-cb697e2d1117"></iframe>
+                  -->
+                  <iframe id="frame" class="b_frame" allow="microphone;" src="https://console.dialogflow.com/api-client/demo/embedded/cb18da56-0d47-4d5a-b6ed-cb697e2d1117"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- <script>
+        // Chatbot Functionality
+        document.getElementById('send-btn').addEventListener('click', sendMessage);
+
+        function sendMessage() {
+            const userInput = document.getElementById('user-input');
+            const message = userInput.value.trim();
+
+            if (message === '') return; // If input is empty, do nothing
+
+            // Add user message to chat box
+            addMessage('user', message);
+
+            // Simulate a chatbot reply
+            setTimeout(() => {
+                const botReply = generateBotReply(message);
+                addMessage('bot', botReply);
+            }, 1000); // 1 second delay for bot reply
+
+            // Clear input field
+            userInput.value = '';
+        }
+
+        function addMessage(sender, message) {
+            const chatBox = document.getElementById('chat-box');
+            const messageBubble = document.createElement('div');
+
+            messageBubble.classList.add('chat-bubble');
+            messageBubble.classList.add(sender === 'user' ? 'user-message' : 'bot-message');
+            messageBubble.textContent = message;
+
+            chatBox.appendChild(messageBubble);
+            chatBox.scrollTop = chatBox.scrollHeight; // Scroll to the bottom
+        }
+
+        function generateBotReply(userMessage) {
+            // Simple bot response logic for now
+            if (userMessage.toLowerCase().includes('hello')) {
+                return 'Hi there! How can I assist you today?';
+            } else if (userMessage.toLowerCase().includes('about')) {
+                return 'I am QERA, a friendly chatbot here to help!';
+            } else {
+                return "I'm not sure about that, but I will try to help!";
+            }
+        }
+    </script> -->
+</body>
+
+</html>

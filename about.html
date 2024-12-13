@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* General Layout */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* height: 100vh; */
+            background-color: black;
+            overflow: hidden;
+        }
+
+
+
+        .container {
+            display: flex;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 20vw;
+            background-color: #242424;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 50px;
+            border-right: 2.5px solid whitesmoke;
+            border-top: 5px solid whitesmoke;
+            border-bottom: 5px solid whitesmoke;
+            border-left: 5px solid whitesmoke;
+            border-radius: 20px;
+            justify-content: center;
+            position: fixed;
+            /* Make the sidebar fixed */
+            height: 100vh;
+            /* Full height of the viewport */
+        }
+
+
+        .sarpanch-semibold {
+            font-family: "Sarpanch", sans-serif;
+            font-weight: 600;
+            font-style: normal;
+        }
+
+        .box {
+            margin: 20px;
+        }
+
+        button {
+            font-size: 1.4em;
+            padding: 0.6em 0.8em;
+            border-radius: 0.5em;
+            border: none;
+            background-color: #000;
+            color: #fff;
+            cursor: pointer;
+            box-shadow: 2px 2px 3px #000000b4;
+            width: 10vw;
+        }
+
+        /* Style for Anchor Tags (Buttons as Links) */
+        .container_nav a {
+            display: block;
+            font-size: 1.4em;
+            padding: 0.6em 0.8em;
+            text-align: center;
+            border-radius: 0.5em;
+            background-color: #000;
+            color: #fff;
+            text-decoration: none;
+            cursor: pointer;
+            box-shadow: 2px 2px 3px #000000b4;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Hover Effect for Links */
+        /* .container_nav a:hover {
+            /* background-color: #020202; 
+            
+        } */
+
+        .container_nav {
+            width: 10vw;
+            position: relative;
+            padding: 3px;
+            background: linear-gradient(90deg, #ff5f00, #ec3499);
+            border-radius: 0.9em;
+            transition: all 0.4s ease;
+            margin: 15px;
+
+        }
+
+
+        .container_nav::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            margin: auto;
+            border-radius: 0.9em;
+            z-index: -10;
+            filter: blur(10);
+            transition: filter 0.4s ease;
+
+        }
+
+        .container_nav:hover::before {
+            background: linear-gradient(90deg, #ff5f00, #ec3499);
+            filter: blur(1.2em);
+        }
+
+        .container_nav:active::before {
+            filter: blur(0.2em);
+        }
+
+
+
+
+
+        /* Main Content */
+        .main-content {
+
+            width: 80vw;
+            margin-left: 20vw;
+            /* Offset the content due to sidebar */
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            /* Align content to top */
+            align-items: center;
+            padding: 10px;
+            background-color: black;
+            background: url('background.jpg');
+            background-repeat: no-repeat;
+            background-size: 80vw;
+            border: 5px solid whitesmoke;
+            border-radius: 20px;
+            overflow-y: auto;
+            /* Enable scrolling */
+            height: 100vh;
+            /* Full height */
+
+
+
+        }
+
+        /* Hide Scrollbar */
+        .main-content::-webkit-scrollbar {
+            width: 0;
+            /* Remove scrollbar space */
+            height: 0;
+        }
+
+        .main-content {
+            scrollbar-width: none;
+            /* For Firefox */
+            -ms-overflow-style: none;
+            /* For Internet Explorer and Edge */
+        }
+
+
+        .about_qera {
+
+            position: relative;
+            margin: 20px;
+            display: flex;
+            flex-direction: column;
+            border-radius: 20px;
+
+        }
+
+        h1 {
+            text-align: center;
+            margin: 5px;
+            color: red;
+            font-size: xx-large;
+            top: 0;
+        }
+
+        h2 {
+            text-align: center;
+            margin: 5px;
+            color: red;
+            font-size: xx-large;
+            /* top: 0; */
+        }
+
+        h3 {
+            text-align: center;
+            margin: 5px;
+            color: red;
+            top: 40px;
+        }
+    
+
+        p {
+            margin: 5px;
+            color: bisque;
+            padding-left: 5px;
+        }
+
+        p.abq {
+            margin-top: 0;
+            margin: 5px;
+            text-indent: 50px;
+            color: skyblue;
+            padding-left: 5px;
+            top: 50px;
+            font-size: large;
+
+        }
+
+
+        .card_container {
+            display: flex;
+            margin: 10px;
+            width: 76vw;
+            border: 5px solid whitesmoke;
+            border-radius: 20px;
+            height: max-content;
+
+        }
+
+        .card_container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 10px;
+            width: 76vw;
+            border: 5px solid whitesmoke;
+            border-radius: 20px;
+            height: max-content;
+        }
+
+        .team-heading {
+            font-size: 2em;
+            color: red;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .inner_card_container {
+            display: flex;
+            justify-content: center;
+            margin: 10px;
+            width: 75vw;
+            /* border: 5px solid whitesmoke; */
+            border-radius: 20px;
+            height: max-content;
+        }
+
+
+        .business-card {
+            position: relative;
+            border: 4px solid transparent;
+            border-radius: 20px;
+            background-clip: padding-box;
+            z-index: 1;
+            animation: floating 4s ease-in-out infinite;
+            width: 300px;
+            height: 400px;
+            text-align: center;
+            margin: 15px;
+        }
+
+        .business-card::before {
+            content: '';
+            position: absolute;
+            top: -4px;
+            left: -4px;
+            right: -4px;
+            bottom: -4px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 10%, #000 10.01%);
+            background-size: 10px 10px;
+            border-radius: 20px;
+            z-index: -1;
+            animation: rotateBorder 4s linear infinite;
+            /* height: inherit; */
+        }
+
+        @keyframes floating {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-6px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .card-content {
+            background: linear-gradient(315deg, #9FA5D5, #ecf8cf);
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        .profile-image img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            transition: transform 0.5s ease;
+        }
+
+        .name_ {
+            font-size: 25px;
+            margin-bottom: 7px;
+            color: #f75600;
+            color: red;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            text-decoration: none;
+            font-size: 24px;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            transform: scale(1.2);
+            color: #FF5722;
+        }
+
+        .social-icons a:nth-child(1) {
+            color: #0077b5;
+        }
+
+        .social-icons a:nth-child(2) {
+            color: #333;
+        }
+
+        .contact-info {
+            margin-top: 20px;
+        }
+
+        .contact-info p {
+            font-size: 14px;
+            color: #606060;
+        }
+
+        .contact-info p i {
+            color: #000;
+            margin-right: 10px;
+        }
+
+        .contact-info p strong {
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+
+            <div class="box">
+                <div class="container_nav">
+                    <!-- Link to Home -->
+                    <a href="qera.html" class="button">QERA</a>
+                </div>
+                <div class="container_nav">
+                    <!-- Link to About -->
+                    <a href="about.html" class="button">About</a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="about_qera">
+                <h1>QERA<h3>Quick Enquiry RTO Assistant</h3>
+                </h1>
+                <p class="abq">The QERA chatbot is designed to streamline the management of inquiries directed to Road
+                    Transport Offices (RTO) in India, which handle essential public services like vehicle registration,
+                    licensing, and road safety regulations. Due to the high volume of inquiries, manual handling has
+                    become time-consuming, prompting the development of an automated chatbot to handle Frequently Asked
+                    Questions (FAQs). QERA utilizes Google Dialogflow, a powerful platform for Natural Language
+                    Processing (NLP) and conversational interfaces, to manage user interactions with minimal human
+                    intervention. By leveraging an FAQ dataset of over 100 questions, QERA covers the most common
+                    inquiries with high accuracy. The chatbot integrates seamlessly into web applications, using
+                    technologies like HTML, CSS, JavaScript, and Python Flask for backend operations, ensuring that
+                    users can access information efficiently and conveniently.</p>
+
+                <p class="abq">The chatbot employs a well-structured intent classification system and entity recognition
+                    to ensure accurate responses. The performance of QERA is evaluated using metrics such as accuracy,
+                    response time, and user satisfaction, with early results indicating a significant reduction in human
+                    workload. It automates about 85% of user inquiries with impressive accuracy, ensuring quick and
+                    precise responses.</p>
+
+                <p class="abq">The introduction of QERA underscores the importance of automation in handling the
+                    increasing demand for real-time, accurate information in RTO services. Manual systems are often slow
+                    and overwhelmed by the high volume of queries. QERA bridges this gap by providing instant answers to
+                    common RTO-related questions, such as licensing procedures and vehicle registration processes. By
+                    handling routine queries automatically, the chatbot reduces the strain on human agents, freeing them
+                    to handle more complex tasks. This integration enhances overall user experience and operational
+                    efficiency.</p>
+
+                <p class="abq">Several related works form the foundation of QERA. Studies on conversational agents
+                    highlight the benefits of using NLP and chatbot technology to manage FAQs. Research like
+                    "Conversational Agents for User Support" emphasizes the effectiveness of chatbots in user-facing
+                    environments and underscores the importance of structured, automated responses. Other studies, such
+                    as the "Literature Review on Users' Behavioral Intention Toward Chatbots' Adoption," explore factors
+                    that influence user acceptance of chatbot technology, such as ease of use, trust, and perceived
+                    usefulness. These factors are critical for ensuring QERA's success in RTO settings. Additionally,
+                    papers on AI-driven FAQ automation and chatbot evaluation provide insights into the design,
+                    implementation, and performance assessment techniques that ensure QERA delivers accurate, efficient
+                    responses. The chatbot development approach, similar to the one described in the "Developing English
+                    Conversation Chatbot Using Dialogflow" paper, validates the use of platforms like Dialogflow for
+                    developing intelligent conversational agents tailored to domain-specific FAQs.</p>
+
+                <p class="abq">Finally, the system uses a branching storyline approach, which ensures that user inputs
+                    are properly managed even when they do not follow expected paths. Various techniques such as context
+                    handling, intent creation, and entity recognition further enhance QERA's conversational
+                    capabilities. The chatbot's responses and flow of conversation are continuously tested using the
+                    Dialogflow test console and web demo features, with user interactions logged for further analysis
+                    and improvement using metrics like precision, recall, and accuracy. Through this systematic
+                    development and evaluation process, QERA ensures that it remains an effective and reliable tool for
+                    automating RTO inquiries.</p>
+            </div>
+
+            <div class="card_container">
+                <h1 class="team-heading">Developers Team</h1>
+                <div class="inner_card_container">
+                    <div class="business-card">
+                        <div class="card-content">
+                            <div class="profile-image">
+                                <img src="sanket(1).png" alt="Profile Picture">
+                            </div>
+                            <h1 class="name_">Sanket Patil</h1>
+                            <h4>KIT's College Of Engineering, Kolhapur</h4>
+                            <div class="social-icons">
+                                <a href="https://www.linkedin.com/in/sanketpatil06/" target="_blank" rel="noopener"><i
+                                        class="fab fa-linkedin-in"></i></a>
+
+                                <a href="https://github.com/Sanket4265" target="_blank" rel="noopener"><i
+                                        class="fab fa-github"></i></a>
+                            </div>
+                            <div class="contact-info">
+                                <p><i class="fas fa-envelope"></i> <i>sanket4265@gmail.com</i></p>
+                                <p><i class="fas fa-phone"></i> <i>+91 8208779479</i></p>
+                                <!-- <p><i class="fas fa-globe"></i> <i>www.codewithfaraz.com</i></p> -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="business-card">
+                        <div class="card-content">
+                            <div class="profile-image">
+                                <img src="t.png" alt="Profile Picture">
+                            </div>
+                            <h1 class="name_">Shriyani Teli</h1>
+                            <h4>KIT's College Of Engineering, Kolhapur</h4>
+                            <div class="social-icons">
+                                <a href="https://www.linkedin.com/in/shriyaniteli48" target="_blank" rel="noopener"><i
+                                        class="fab fa-linkedin-in"></i></a>
+                                <a href="https://github.com/shriyani18" target="_blank" rel="noopener"><i
+                                        class="fab fa-github"></i></a>
+                            </div>
+                            <div class="contact-info">
+                                <p><i class="fas fa-envelope"></i> <i>shriyaniteli@gmail.com</i></p>
+                                <p><i class="fas fa-phone"></i> <i>+91 9322975060</i></p>
+                                <!-- <p><i class="fas fa-globe"></i> <i>www.codewithfaraz.com</i></p> -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="business-card">
+                        <div class="card-content">
+                            <div class="profile-image">
+                                <img src="darshan.png" alt="Profile Picture">
+                            </div>
+                            <h1 class="name_">Darshan Shinde</h1>
+                            <h4>KIT's College Of Engineering, Kolhapur</h4>
+                            <div class="social-icons">
+                                <a href="https://www.linkedin.com/in/darshanshinde2306" target="_blank"
+                                    rel="noopener"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="https://github.com/Darshan2306-DS" target="_blank" rel="noopener"><i
+                                        class="fab fa-github"></i></a>
+                            </div>
+                            <div class="contact-info">
+                                <p><i class="fas fa-envelope"></i> <i>darshanshind110@gamil.com</i></p>
+                                <p><i class="fas fa-phone"></i> <i>+91 8010427747</i></p>
+                                <!-- <p><i class="fas fa-globe"></i> <i>www.codewithfaraz.com</i></p> -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="business-card">
+                        <div class="card-content">
+                            <div class="profile-image">
+                                <img src="shreyas.png" alt="Profile Picture">
+                            </div>
+                            <h1 class="name_">Shreyas Patil</h1>
+                            <h4>KIT's College Of Engineering, Kolhapur</h4>
+                            <div class="social-icons">
+                                <a href="https://www.linkedin.com/in/shreyas-shidgonda-patil/" target="_blank"
+                                    rel="noopener"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="https://github.com/shreyas-s-patil/" target="_blank" rel="noopener"><i
+                                        class="fab fa-github"></i></a>
+                            </div>
+                            <div class="contact-info">
+                                <p><i class="fas fa-envelope"></i> <i>shreyash04patil@gmail.com</i></p>
+                                <p><i class="fas fa-phone"></i> <i>+91 9423809179</i></p>
+                                <!-- <p><i class="fas fa-globe"></i> <i>www.codewithfaraz.com</i></p> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+</body>
+
+</html>
